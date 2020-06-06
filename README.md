@@ -1,4 +1,4 @@
-# UsergeX
+# UsergeX 🔥 &middot; [![Build Status](https://travis-ci.com/rzlamrr/UsergeX.svg?branch=master)](https://travis-ci.com/rzlamrr/UsergeX) [![License](https://img.shields.io/github/license/rzlamrr/UsergeX?label=License)](https://github.com/rzlamrr/UsergeX/blob/master/LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/rzlamrr/UsergeX/master?label=Last%20Commit)](https://github.com/rzlamrr/UsergeX)
 <p align="center">
     <b>Pluggable Telegram UserBot</b>
     <br>
@@ -14,8 +14,6 @@
     &nbsp•&nbsp
     <a href="https://github.com/UsergeTeam/Userge#copyright--license-">Copyright & License</a>
 </p>
-
-[![Build Status](https://travis-ci.com/rzlamrr/UsergeX.svg?branch=master)](https://travis-ci.com/rzlamrr/UsergeX)
 
 > **Userge** is a Powerful , _Pluggable_ Telegram UserBot written in _Python_ using [Pyrogram](https://github.com/pyrogram/pyrogram).
 
@@ -88,7 +86,7 @@ async def testing(message: Message):
 
   > Finally turn on the app and check the logs (settings -> view logs) :)
 
-  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/UsergeTeam/Userge/tree/master)
+  [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/rzlamrr/UsergeX/tree/master)
 
 * **Other Method** 🔧
 
@@ -138,6 +136,5 @@ async def testing(message: Message):
 
 ### Copyright & License 👮
 
-* Copyright (C) 2020 by [UsergeTeam](https://github.com/UsergeTeam) ❤️️
-* Licensed under the terms of the [GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007](https://github.com/UsergeTeam/Userge/blob/master/LICENSE)
->>>>>>> ug/alpha
+* Copyright (C) 2020 by [UsergeTeam](https://github.com/rzlamrr) ❤️️
+* Licensed under the terms of the [GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007](https://github.com/rzlamrr/UsergeX/blob/master/LICENSE)
