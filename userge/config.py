@@ -64,7 +64,7 @@ class Config:
     GOOGLE_CHROME_DRIVER = os.environ.get("GOOGLE_CHROME_DRIVER", None)
     GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
     LOG_CHANNEL_ID = int(os.environ.get("LOG_CHANNEL_ID", 0))
-    UPSTREAM_REPO = os.environ.get("UPSTREAM_REPO", "https://github.com/UsergeTeam/Userge")
+    UPSTREAM_REPO = os.environ.get("UPSTREAM_REPO", "https://github.com/rzlamrr/UsergeX")
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
     LOAD_UNOFFICIAL_PLUGINS = bool(os.environ.get("LOAD_UNOFFICIAL_PLUGINS", False))
