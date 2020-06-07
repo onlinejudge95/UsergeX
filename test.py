@@ -28,16 +28,16 @@ async def main() -> None:
             tasks.append(loop.create_task(task()))
         print('stating worker...!')
         await worker()
-        print('closing tasks...!')
-        for task in tasks:
-            task.cancel()
-        print('stopping client...!')
-        await userge.stop()
         print('sendig result...!')
         await userge.send_message(chat_id, 'Result: success')
     except:
         print('sendig result...!')
         await userge.send_message(chat_id, 'Result: error')
+        print('closing tasks...!')
+        for task in tasks:
+            task.cancel()
+        print('stopping client...!')
+        await userge.stop()
     
     
 loop = asyncio.get_event_loop()
