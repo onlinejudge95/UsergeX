@@ -1,4 +1,4 @@
-   """ kang stickers """
+""" kang stickers """
 
 # Copyright (C) 2020 by UsergeTeam@Github, < https://github.com/UsergeTeam >.
 #
