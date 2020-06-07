@@ -9,9 +9,9 @@
 from pyrogram.errors.exceptions import FileIdInvalid, FileReferenceEmpty
 from pyrogram.errors.exceptions.bad_request_400 import BadRequest
 
-from userge import userge, Message, Config, versions, get_version
+from userge import userge, Message, Config, versions
 
-LOGO_STICKER_ID, LOGO_STICKER_REF = None, None
+#LOGO_STICKER_ID, LOGO_STICKER_REF = None, None
 
 
 @userge.on_cmd("alive", about={'header': "This command is just for fun"})
@@ -31,7 +31,7 @@ async def alive(message: Message):
 
 • **python**   : `v{versions.__python_version__}`
 • **pyrogram** : `v{versions.__pyro_version__}`
-• **userge**   : `X{get_version()}`
+• **userge**   : `x0.1b`
 """
     await userge.send_message(message.chat.id, output, disable_web_page_preview=True)
 
