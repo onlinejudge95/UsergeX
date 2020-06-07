@@ -1,4 +1,4 @@
-""" kang stickers """
+   """ kang stickers """
 
 # Copyright (C) 2020 by UsergeTeam@Github, < https://github.com/UsergeTeam >.
 #
@@ -12,8 +12,10 @@ import os
 import math
 import random
 import urllib.request
+import asyncio
+import textwrap
 
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 from pyrogram.api.functions.messages import GetStickerSet
 from pyrogram.api.types import InputStickerSetShortName
 from pyrogram.errors.exceptions.bad_request_400 import YouBlockedUser
@@ -21,7 +23,7 @@ from pyrogram.errors.exceptions.bad_request_400 import YouBlockedUser
 from userge import userge, Message, Config, pool
 
 
-@userge.on_cmd("kang", about={
+@userge.on_cmd("(kang|curi|cury|colong|ambil)", about={
     'header': "kangs stickers or creates new ones",
     'usage': "Reply {tr}kang [emoji('s)] [pack number] to a sticker or "
              "an image to kang it to your userbot pack.",
@@ -55,7 +57,7 @@ async def kang_(message: Message):
         photo = await userge.download_media(message=replied,
                                             file_name=Config.DOWN_PATH)
     else:
-        await message.edit("`I can't kang that...`")
+        await message.edit("`Nginx, can' proccess...`")
         return
     if photo:
         args = message.input_str.split()
@@ -69,14 +71,14 @@ async def kang_(message: Message):
                 pack = int(args[0])
             else:
                 emoji = args[0]
-        packname = f"a{user.id}_by_{user.username}_{pack}"
-        packnick = f"@{user.username}'s kang pack Vol.{pack}"
+        packname = f"a{user.id}_{user.username}_{pack}"
+        packnick = f"{user.first_name} Pt.{pack}"
         cmd = '/newpack'
         if resize:
             photo = resize_photo(photo)
         if is_anim:
-            packname += "_anim"
-            packnick += " (Animated)"
+            packname = f"a{user.id}_by_{user.username}_anim{pack}"
+            packnick = f"{user.first_name} Anim.{pack}"
             cmd = '/newanimated'
 
         @pool.run_in_thread
@@ -99,13 +101,12 @@ async def kang_(message: Message):
                 limit = "50" if is_anim else "120"
                 while limit in msg.text:
                     pack += 1
-                    packname = f"a{user.id}_by_{user.username}_{pack}"
-                    packnick = f"@{user.username}'s kang pack Vol.{pack}"
-                    await message.edit("`Switching to Pack " + str(pack) +
-                                       " due to insufficient space`")
+                    packname = f"a{user.id}_{user.username}_{pack}"
+                    packnick = f"{user.first_name} Pt.{pack}"
+                    await message.edit("`Creating new branch: " + str(pack))
                     await conv.send_message(packname)
                     msg = await conv.get_response(mark_read=True)
-                    if msg.text == "Invalid pack selected.":
+                    if msg.text == "Invalid branch selected.":
                         await conv.send_message(cmd)
                         await conv.get_response(mark_read=True)
                         await conv.send_message(packnick)
@@ -124,9 +125,8 @@ async def kang_(message: Message):
                         await conv.send_message(packname)
                         await conv.get_response(mark_read=True)
                         await message.edit(
-                            f"`Sticker added in a Different Pack !\n"
-                            "This Pack is Newly created!\n"
-                            f"Your pack can be found [here](t.me/addstickers/{packname})")
+                            f"`Build finished on new branch` !\n"
+                            f"**Changelogs:** [here](t.me/addstickers/{packname})")
                         return
                 await conv.send_document(photo)
                 rsp = await conv.get_response(mark_read=True)
@@ -166,8 +166,8 @@ async def kang_(message: Message):
                 await conv.get_response(mark_read=True)
                 await conv.send_message(packname)
                 await conv.get_response(mark_read=True)
-        await message.edit(f"`Sticker kanged successfully!`\n"
-                           f"Pack can be found [here](t.me/addstickers/{packname})")
+        await message.edit(f"`Build finished successfully!`\n"
+                           f"**Changelogs:** [here](t.me/addstickers/{packname})")
         os.remove(photo)
 
 
@@ -192,14 +192,14 @@ async def sticker_pack_info_(message: Message):
     for document_sticker in get_stickerset.packs:
         if document_sticker.emoticon not in pack_emojis:
             pack_emojis.append(document_sticker.emoticon)
-    out_str = f"**Sticker Title:** `{get_stickerset.set.title}\n`" \
-        f"**Sticker Short Name:** `{get_stickerset.set.short_name}`\n" \
+    out_str = f"**Title:** `{get_stickerset.set.title}\n`" \
+        f"**Short Name:** `{get_stickerset.set.short_name}`\n" \
         f"**Archived:** `{get_stickerset.set.archived}`\n" \
         f"**Official:** `{get_stickerset.set.official}`\n" \
         f"**Masks:** `{get_stickerset.set.masks}`\n" \
         f"**Animated:** `{get_stickerset.set.animated}`\n" \
-        f"**Stickers In Pack:** `{get_stickerset.set.count}`\n" \
-        f"**Emojis In Pack:**\n{' '.join(pack_emojis)}"
+        f"**Stickers:** `{get_stickerset.set.count}`\n" \
+        f"**Emojis:**\n{' '.join(pack_emojis)}"
     await message.edit(out_str)
 
 
@@ -233,13 +233,101 @@ def resize_photo(photo: str) -> str:
 
 
 KANGING_STR = (
-    "Using Witchery to kang this sticker...",
-    "Plagiarising hehe...",
-    "Inviting this sticker over to my pack...",
-    "Kanging this sticker...",
-    "Hey that's a nice sticker!\nMind if I kang?!..",
-    "hehe me stel ur stikér\nhehe.",
-    "Ay look over there (☉｡☉)!→\nWhile I kang this...",
-    "Roses are red violets are blue, kanging this sticker so my pacc looks cool",
-    "Imprisoning this sticker...",
-    "Mr.Steal Your Sticker is stealing this sticker... ")
+    "Build starting...",
+    "Overclocking..",
+    "Underclocking..",
+    "Build started under commit: **Merge branch into new pack**",
+    "Build started under commit: **Rewrite to improve performance**")
+
+
+
+@userge.on_cmd("q", about={
+    'header': "Quote a message",
+    'usage': "{tr}q [text or reply to msg]"})
+async def quotecmd(message: Message):
+    """quotecmd"""
+    asyncio.get_event_loop().create_task(message.delete())
+    args = message.input_str
+    replied = message.reply_to_message
+    async with userge.conversation('QuotLyBot') as conv:
+        try:
+            if replied and not args:
+                await conv.forward_message(replied)
+            else:
+                if not args:
+                    await message.err('input not found!')
+                    return
+                await conv.send_message(args)
+        except YouBlockedUser:
+            await message.edit('first **unblock** @QuotLyBot')
+            return
+        quote = await conv.get_response(mark_read=True)
+        if not quote.sticker:
+            await message.err('something went wrong!')
+        else:
+            message_id = replied.message_id if replied else None
+            await userge.send_sticker(chat_id=message.chat.id,
+                                      sticker=quote.sticker.file_id,
+                                      file_ref=quote.sticker.file_ref,
+                                      reply_to_message_id=message_id)
+
+
+@userge.on_cmd("plet", about={
+    'header': "Get a Random RGB Sticker",
+    'description': "Generates A RGB Sticker with provided text",
+    'usage': "{tr}plet [text | reply]",
+    'examples': "{tr}plet Fucek"})
+async def sticklet(message: Message):
+    R = random.randint(0, 256)
+    G = random.randint(0, 256)
+    B = random.randint(0, 256)
+
+    sticktext = message.input_or_reply_str
+    if not sticktext:
+        await message.edit("**Bruh** ~`I need some text to make sticklet`")
+        return
+    await message.delete()
+
+    if message.reply_to_message:
+        reply_to = message.reply_to_message.message_id
+    else:
+        reply_to = message.message_id
+
+    # https://docs.python.org/3/library/textwrap.html#textwrap.wrap
+
+    sticktext = textwrap.wrap(sticktext, width=10)
+    sticktext = '\n'.join(sticktext)
+
+    image = Image.new("RGBA", (512, 512), (255, 255, 255, 0))
+    draw = ImageDraw.Draw(image)
+    fontsize = 230
+
+    font_file = await get_font_file()
+    font = ImageFont.truetype(font_file, size=fontsize)
+
+    while draw.multiline_textsize(sticktext, font=font) > (512, 512):
+        fontsize -= 3
+        font = ImageFont.truetype(font_file, size=fontsize)
+
+    width, height = draw.multiline_textsize(sticktext, font=font)
+    draw.multiline_text(
+        ((512 - width) / 2, (512 - height) / 2), sticktext, font=font, fill=(R, G, B))
+
+    image_name = "rgb_sticklet.webp"
+    image.save(image_name, "WebP")
+
+    await userge.send_sticker(
+        chat_id=message.chat.id, sticker=image_name, reply_to_message_id=reply_to)
+
+    # cleanup
+    try:
+        os.remove(font_file)
+        os.remove(image_name)
+    except Exception:
+        pass
+
+
+async def get_font_file():
+    font_file_message_s = await userge.get_history("@FontsRes")
+    font_file_message = random.choice(font_file_message_s)
+    return await userge.download_media(font_file_message)
