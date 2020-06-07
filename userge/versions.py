@@ -20,3 +20,5 @@ __license__ = ("[GNU General Public License v3.0]"
                "(https://github.com/UsergeTeam/Userge/blob/master/LICENSE)")
 
 __copyright__ = "Copyright (C) 2020 by [UsergeTeam@Github](https://github.com/UsergeTeam)"
+
+__usergex__ = "X0.1b"

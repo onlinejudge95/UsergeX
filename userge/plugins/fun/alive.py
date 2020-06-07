@@ -31,7 +31,7 @@ async def alive(message: Message):
 
 • **python**   : `v{versions.__python_version__}`
 • **pyrogram** : `v{versions.__pyro_version__}`
-• **userge**   : `x0.1b`
+• **userge**   : `{versions.__usergex__}`
 """
     await userge.send_message(message.chat.id, output, disable_web_page_preview=True)
 
