@@ -1,18 +1,18 @@
-# UsergeX 🔥 &middot; [![Build Status](https://travis-ci.com/rzlamrr/UsergeX.svg?branch=master)](https://travis-ci.com/rzlamrr/UsergeX) [![License](https://img.shields.io/github/license/rzlamrr/UsergeX?label=License)](https://github.com/rzlamrr/UsergeX/blob/master/LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/rzlamrr/UsergeX/master?label=Last%20Commit)](https://github.com/rzlamrr/UsergeX)
+# UsergeX 🔥 &middot; [![Build Status](https://travis-ci.com/rzlamrr/UsergeX.svg?branch=master)](https://travis-ci.com/rzlamrr/UsergeX) [![DeepSource](https://static.deepsource.io/deepsource-badge-dark-mini.svg)](https://deepsource.io/gh/rzlamrr/UsergeX/?ref=repository-badge) [![License](https://img.shields.io/github/license/rzlamrr/UsergeX?label=License)](https://github.com/rzlamrr/UsergeX/blob/master/LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/rzlamrr/UsergeX/master?label=Last%20Commit)](https://github.com/rzlamrr/UsergeX)
 <p align="center">
     <b>Pluggable Telegram UserBot</b>
     <br>
-    <a href="https://github.com/UsergeTeam/Userge#inspiration-">Inspiration</a>
+    <a href="https://github.com/rzlamrr/UsergeX#inspiration-">Inspiration</a>
     &nbsp•&nbsp
-    <a href="https://github.com/UsergeTeam/Userge#features-">Features</a>
+    <a href="https://github.com/rzlamrr/UsergeX#features-">Features</a>
     &nbsp•&nbsp
-    <a href="https://github.com/UsergeTeam/Userge#example-plugin-">Example</a>
+    <a href="https://github.com/rzlamrr/UsergeX#example-plugin-">Example</a>
     &nbsp•&nbsp
-    <a href="https://github.com/UsergeTeam/Userge#requirements-">Requirements</a>
+    <a href="https://github.com/rzlamrr/UsergeX#requirements-">Requirements</a>
     &nbsp•&nbsp
-    <a href="https://github.com/UsergeTeam/Userge#project-credits-">Project Credits</a>
+    <a href="https://github.com/rzlamrr/UsergeX#project-credits-">Project Credits</a>
     &nbsp•&nbsp
-    <a href="https://github.com/UsergeTeam/Userge#copyright--license-">Copyright & License</a>
+    <a href="https://github.com/rzlamrr/UsergeX#copyright--license-">Copyright & License</a>
 </p>
 
 > **Userge** is a Powerful , _Pluggable_ Telegram UserBot written in _Python_ using [Pyrogram](https://github.com/pyrogram/pyrogram).
@@ -21,7 +21,8 @@
 
 > This project is inspired by the following projects :)
 
-* [tg_userbot](https://github.com/watzon/tg_userbot) ( heavily ) 🤗
+* [Userge](https://github.com/UsergeTeam/Userge) (based on)
+* [tg_userbot](https://github.com/watzon/tg_userbot) ( heavily )
 * [PyroGramUserBot](https://github.com/SpEcHiDe/PyroGramUserBot)
 * [Telegram-Paperplane](https://github.com/RaphielGang/Telegram-Paperplane)
 * [UniBorg](https://github.com/SpEcHiDe/UniBorg)
@@ -116,13 +117,10 @@ async def testing(message: Message):
 
 > TODO: add Docker Support.
 
-### Video Tutorial 🎥
-
-  [![Tutorial](resources/tutorial.jpg)](https://youtu.be/-XJj686zeiY "Tutorial")
 
 ### Support & Discussions 👥
 
-> Head over to the [Discussion Group](https://t.me/slbotsbugs) and [Update Channel](https://t.me/theUserge)
+> Head over to the [Discussion Group](https://t.me/userbotindo) and [Update Channel](https://t.me/theUserge)
 
 ### Project Credits 💆‍♂️
 
