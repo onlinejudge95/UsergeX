@@ -10,29 +10,36 @@ import os
 import asyncio
 from userge import userge
 
+chat_id = int(os.environ.get("CHAT_ID") or 0)
 
 async def worker() -> None:
-    chat_id = int(os.environ.get("CHAT_ID") or 0)
-    await userge.send_message(chat_id, 'testing_userge')
+    await userge.send_message(chat_id, 'Testing UsergeX')
     print('sleeping 3 sec...!')
     await asyncio.sleep(3)
 
-
+    
 async def main() -> None:
-    print('starting client...!')
-    await userge._start()
-    tasks = []
-    print('adding tasks...!')
-    for task in userge._tasks:
-        tasks.append(loop.create_task(task()))
-    print('stating worker...!')
-    await worker()
-    print('closing tasks...!')
-    for task in tasks:
-        task.cancel()
-    print('stopping client...!')
-    await userge.stop()
-
+    try:
+        print('starting client...!')
+        await userge._start()
+        tasks = []
+        print('adding tasks...!')
+        for task in userge._tasks:
+            tasks.append(loop.create_task(task()))
+        print('stating worker...!')
+        await worker()
+        print('closing tasks...!')
+        for task in tasks:
+            task.cancel()
+        print('stopping client...!')
+        await userge.stop()
+        print('sendig result...!')
+        await userge.send_message(chat_id, 'Result: success')
+    except:
+        print('sendig result...!')
+        await userge.send_message(chat_id, 'Result: error')
+    
+    
 loop = asyncio.get_event_loop()
 print('creating loop...!')
 loop.run_until_complete(main())
