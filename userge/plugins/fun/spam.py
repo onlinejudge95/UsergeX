@@ -29,6 +29,7 @@ async def spam(message: Message):
                 await message.reply_sticker(sticker="CAADAQADzAADiO9hRu2b2xyV4IbAFgQ")
                 return
             for _ in range(sc):
+                await message.delete()
                 await userge.send_sticker(sticker=to_spam, chat_id=message.chat.id)
                 await asyncio.sleep(0.1)
             await S_LOG.log(f"Spammed Sticker in Chat» {message.chat.title}, {sc} times")
@@ -46,10 +47,12 @@ async def spam(message: Message):
                 return
             if (replied.video or replied.animation):
                 for _ in range(sc):
+                    await message.delete()
                     await userge.send_video(video=to_spam, chat_id=message.chat.id)
                     await asyncio.sleep(0.1)
             elif replied.photo:
                 for _ in range(sc):
+                    await message.delete()
                     await userge.send_photo(photo=to_spam, chat_id=message.chat.id)
                     await asyncio.sleep(0.1)
             await S_LOG.log(f"Spammed Media in Chat» {message.chat.title}, {sc} times")
@@ -62,6 +65,7 @@ async def spam(message: Message):
             await message.reply_sticker(sticker="CAADAQADzAADiO9hRu2b2xyV4IbAFgQ")
             return
         for _ in range(sc):
+            await message.delete()
             await userge.send_message(text=spam_text, chat_id=message.chat.id)
             await asyncio.sleep(0.1)
         await S_LOG.log(f"Spammed Text in Chat» {message.chat.title}, {sc} times")
