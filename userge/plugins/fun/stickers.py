@@ -23,7 +23,7 @@ from pyrogram.errors.exceptions.bad_request_400 import YouBlockedUser
 from userge import userge, Message, Config, pool
 
 
-@userge.on_cmd("(kang|curi|cury|colong|ambil)", about={
+@userge.on_cmd("kang", about={
     'header': "kangs stickers or creates new ones",
     'usage': "Reply {tr}kang [emoji('s)] [pack number] to a sticker or "
              "an image to kang it to your userbot pack.",
