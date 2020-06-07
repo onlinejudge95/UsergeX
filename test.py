@@ -30,6 +30,11 @@ async def main() -> None:
         await worker()
         print('sendig result...!')
         await userge.send_message(chat_id, 'Result: success')
+        print('closing tasks...!')
+        for task in tasks:
+            task.cancel()
+        print('stopping client...!')
+        await userge.stop()
     except:
         print('sendig result...!')
         await userge.send_message(chat_id, 'Result: error')
