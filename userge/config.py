@@ -151,11 +151,13 @@ if Config.LOAD_UNOFFICIAL_PLUGINS:
     os.system("rm -rf Userge-Plugins/")
     _LOG.info("UnOfficial Plugins Loaded Successfully!")
 
+_LOG.info("UsergeX v%s is alive!", versions.__usergex__)
+_LOG.info("Try %salive or %sping in any chat!", Config.CMD_TRIGGER)
 
 def get_version() -> str:
     """ get userge version """
     ver = f"{versions.__major__}.{versions.__minor__}.{versions.__micro__}"
-    diff = list(Repo().iter_commits(f'{Config.UPSTREAM_REMOTE}/master..HEAD'))
+    diff = list(Repo().iter_commits(f'{Config.UPSTREAM_REPO}/master..HEAD'))
     if diff:
         return f"{ver}-beta.{len(diff)}"
     return ver
