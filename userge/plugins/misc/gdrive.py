@@ -1120,7 +1120,7 @@ async def ggetperm_(message: Message):
 
 
 @userge.on_cmd("gsetperm", about={
-    'header': "Set permissions to file/folder in GDrive",
+    'header': "Set permissions to file/folder in GDrive(make it public)",
     'usage': "{tr}gsetperm [file_id | file/folder link]"})
 async def gsetperm_(message: Message):
     """ set permissions """
@@ -1128,7 +1128,7 @@ async def gsetperm_(message: Message):
 
 
 @userge.on_cmd("gdelperm", about={
-    'header': "Remove all permissions of file/folder in GDrive",
+    'header': "Remove all permissions of file/folder in GDrive(need to get permission from you)",
     'usage': "{tr}gdelperm [file_id | file/folder link]"})
 async def gdelperm_(message: Message):
     """ delete permissions """
