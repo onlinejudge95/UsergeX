@@ -120,7 +120,7 @@ class Userge(Methods):
         running_tasks: List[asyncio.Task] = []
         for task in self._tasks:
             running_tasks.append(loop.create_task(task()))
-        _LOG.info("UsergeX v%s is alive!", versions.__usergex__)
+        _LOG.info("UsergeX v0.1b is alive!")
         run(Userge.idle())
         _LOG.info(_LOG_STR, "Exiting Usergex")
         for task in running_tasks:
