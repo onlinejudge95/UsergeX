@@ -53,7 +53,8 @@ async def kang_(message: Message):
         else:
             await message.edit("`Unsupported File!`")
             return
-        await message.edit(f"`{random.choice(KANGING_STR)}`")
+        await message.edit(f"`{random.choice(KANGING_STR)}`",
+                                parse_mode=markdown)
         photo = await userge.download_media(message=replied,
                                             file_name=Config.DOWN_PATH)
     else:
@@ -127,6 +128,8 @@ async def kang_(message: Message):
                         await message.edit(
                             f"`Build finished on new branch` !\n"
                             f"**Changelogs:** [here](t.me/addstickers/{packname})")
+                        await asyncio.sleep(25)
+                        await message.delete()
                         return
                 await conv.send_document(photo)
                 rsp = await conv.get_response(mark_read=True)
@@ -168,6 +171,8 @@ async def kang_(message: Message):
                 await conv.get_response(mark_read=True)
         await message.edit(f"`Build finished successfully!`\n"
                            f"**Changelogs:** [here](t.me/addstickers/{packname})")
+        await asyncio.sleep(25)
+        await message.delete()
         os.remove(photo)
 
 
