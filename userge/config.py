@@ -67,6 +67,7 @@ class Config:
     UPSTREAM_REPO = os.environ.get("UPSTREAM_REPO", "https://github.com/rzlamrr/UsergeX")
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
+    HEROKU_GIT_URL = os.environ.get("HEROKU_GIT_URL", None)
     LOAD_UNOFFICIAL_PLUGINS = bool(os.environ.get("LOAD_UNOFFICIAL_PLUGINS", False))
     CMD_TRIGGER = os.environ.get("CMD_TRIGGER", '.')
     SUDO_TRIGGER = os.environ.get("SUDO_TRIGGER", '!')
