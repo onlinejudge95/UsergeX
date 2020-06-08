@@ -20,8 +20,8 @@ from userge import userge, Message, Config, get_collection
 
 SAVED_SETTINGS = get_collection("CONFIGS")
 UPDATE_PIC = False
-BASE_PIC = "resources/base_profile_pic.jpg"
-MDFY_PIC = "resources/mdfy_profile_pic.jpg"
+BASE_PIC = "usergeX/base_profile_pic.jpg"
+MDFY_PIC = "usergeX/mdfy_profile_pic.jpg"
 LOG = userge.getLogger(__name__)
 
 
@@ -88,8 +88,8 @@ async def apic_worker():
     while UPDATE_PIC:
         img = Image.open(BASE_PIC)
         i_width, i_height = img.size
-        s_font = ImageFont.truetype("resources/font.ttf", int((35 / 640)*i_width))
-        l_font = ImageFont.truetype("resources/font.ttf", int((50 / 640)*i_width))
+        s_font = ImageFont.truetype("usergeX/font.ttf", int((35 / 640)*i_width))
+        l_font = ImageFont.truetype("usergeX/font.ttf", int((50 / 640)*i_width))
         draw = ImageDraw.Draw(img)
         current_h, pad = 10, 0
         for user in textwrap.wrap(user, width=20):

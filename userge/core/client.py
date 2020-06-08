@@ -30,7 +30,7 @@ class Userge(Methods):
     def __init__(self) -> None:
         self._init_tasks: List[asyncio.Task] = []
         self._imported: List[ModuleType] = []
-        _LOG.info(_LOG_STR, "Setting Userge Configs")
+        _LOG.info(_LOG_STR, "Setting UsergeX Configs")
         super().__init__(client=self,
                          session_name=Config.HU_STRING_SESSION,
                          api_id=Config.API_ID,
@@ -92,7 +92,7 @@ class Userge(Methods):
 
     async def restart(self, update_req: bool = False) -> None:
         """ Restart the Userge """
-        _LOG.info(_LOG_STR, "Restarting Userge")
+        _LOG.info(_LOG_STR, "Restarting UsergeX")
         await self.stop()
         try:
             c_p = psutil.Process(os.getpid())
@@ -115,14 +115,14 @@ class Userge(Methods):
         """ This will start the Userge """
         loop = asyncio.get_event_loop()
         run = loop.run_until_complete
-        _LOG.info(_LOG_STR, "Starting Userge")
+        _LOG.info(_LOG_STR, "Starting Usergex")
         run(self._start())
         running_tasks: List[asyncio.Task] = []
         for task in self._tasks:
             running_tasks.append(loop.create_task(task()))
-        _LOG.info(_LOG_STR, "Idling Userge")
+        _LOG.info("UsergeX v%s is alive!", versions.__usergex__)
         run(Userge.idle())
-        _LOG.info(_LOG_STR, "Exiting Userge")
+        _LOG.info(_LOG_STR, "Exiting Usergex")
         for task in running_tasks:
             task.cancel()
         run(self.stop())

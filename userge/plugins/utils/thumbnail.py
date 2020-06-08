@@ -51,8 +51,8 @@ async def clear_thumb_nail(message: Message):
     if os.path.exists(THUMB_PATH):
         os.remove(THUMB_PATH)
         await message.edit("✅ Custom thumbnail deleted succesfully.", del_in=3)
-    elif os.path.exists('resources/userge.png'):
-        os.remove('resources/userge.png')
+    elif os.path.exists('usergeX/userge.png'):
+        os.remove('usergeX/userge.png')
         await message.edit("✅ Default thumbnail deleted succesfully.", del_in=3)
     else:
         await message.delete()
