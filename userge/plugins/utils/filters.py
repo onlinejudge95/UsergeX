@@ -67,10 +67,10 @@ async def delete_filters(message: Message) -> None:
     await message.edit(text=out, del_in=3)
 
 
-@userge.on_cmd(r"addfilter (\w[^\|]*)(?:\s?\|\s?([\s\S]+))?",
+@userge.on_cmd(r"filter (\w[^\|]*)(?:\s?\|\s?([\s\S]+))?",
                about={
                    'header': "Adds a filter by name",
-                   'usage': "{tr}addfilter [filter name] | [content | reply to msg]"})
+                   'usage': "{tr}filter [filter name] | [content | reply to msg]"})
 async def add_filter(message: Message) -> None:
     """ add filter to current chat """
     filter_ = message.matches[0].group(1).strip()
