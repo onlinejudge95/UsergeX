@@ -1,4 +1,4 @@
-# UsergeX 🔥 &middot; [![Build Status](https://travis-ci.com/rzlamrr/UsergeX.svg?branch=master)](https://travis-ci.com/rzlamrr/UsergeX) [![DeepSource](https://static.deepsource.io/deepsource-badge-dark-mini.svg)](https://deepsource.io/gh/rzlamrr/UsergeX/?ref=repository-badge) [![License](https://img.shields.io/github/license/rzlamrr/UsergeX?label=License)](https://github.com/rzlamrr/UsergeX/blob/master/LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/rzlamrr/UsergeX/master?label=Last%20Commit)](https://github.com/rzlamrr/UsergeX)
+# UsergeX 🔥 &middot; [![Build Status](https://travis-ci.com/rzlamrr/UsergeX.svg?branch=master)](https://travis-ci.com/rzlamrr/UsergeX) [![DeepSource](https://static.deepsource.io/deepsource-badge-light-mini.svg)](https://deepsource.io/gh/rzlamrr/UsergeX/?ref=repository-badge) [![License](https://img.shields.io/github/license/rzlamrr/UsergeX?label=License)](https://github.com/rzlamrr/UsergeX/blob/master/LICENSE) [![Last Commit](https://img.shields.io/github/last-commit/rzlamrr/UsergeX/master?label=Last%20Commit)](https://github.com/rzlamrr/UsergeX)
 <p align="center">
     <b>Pluggable Telegram UserBot</b>
     <br>
