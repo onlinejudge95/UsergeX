@@ -44,7 +44,6 @@ async def main() -> None:
         print('stopping client...!')
         await userge.stop()
     
-    
 loop = asyncio.get_event_loop()
 print('creating loop...!')
 loop.run_until_complete(main())
