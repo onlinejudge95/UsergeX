@@ -43,6 +43,10 @@
             "description": "Your Languge ( ex: if english => 'en' )",
             "required": false
         },
+        "ARL_TOKEN": {
+            "description": "https://www.google.com/search?q=how+to+get+deezer+arl+token",
+            "required": false
+        },
         "CURRENCY_API": {
             "description": "get API key from 'https://free.currencyconverterapi.com'",
             "required": false
