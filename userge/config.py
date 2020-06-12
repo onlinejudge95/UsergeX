@@ -82,7 +82,7 @@ class Config:
     ALLOWED_CHATS = Filters.chat([])
     SUDO_USERS: Set[int] = set()
     ALLOWED_COMMANDS: Set[str] = set()
-    UPSTREAM_REMOTE = 'https://github.com/rzlamrr/UsergeX'
+    UPSTREAM_REMOTE = 'UsergeX'
     HEROKU_APP = None
     HEROKU_GIT_URL = None
 
