@@ -103,3 +103,4 @@ async def chat_filter(message: Message) -> None:
                 or input_text.startswith(f"{name} ")
                 or input_text.endswith(f" {name}")
                 or f" {name} " in input_text):
+            await message.reply(FILTERS_DATA[message.chat.id][name])
