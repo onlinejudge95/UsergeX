@@ -122,7 +122,7 @@ class Userge(Methods):
         loop = asyncio.get_event_loop()
         run = loop.run_until_complete
         _LOG.info(_LOG_STR, "Starting Usergex")
-        run(self._start())
+        run(self.start())
         running_tasks: List[asyncio.Task] = []
         for task in self._tasks:
             running_tasks.append(loop.create_task(task()))
