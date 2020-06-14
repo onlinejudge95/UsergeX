@@ -282,7 +282,7 @@ async def quotecmd(message: Message):
     'header': "Get a Random RGB Sticker",
     'description': "Generates A RGB Sticker with provided text",
     'usage': "{tr}plet [text | reply]",
-    'examples': "{tr}plet Fucek"})
+    'examples': "{tr}plet @theUserge"})
 async def sticklet(message: Message):
     R = random.randint(0, 256)
     G = random.randint(0, 256)
