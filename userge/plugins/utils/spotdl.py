@@ -13,7 +13,7 @@ TEMP_DIR = "spotdl/"
     'header': "Spotify Downloader",
     'description': "Download Songs via Spotify Links"
                    " or just by giving song names. ",
-    'usage': "{tr}spotdl [Spotify Link or Song Name]|[Quality (optional)]""})
+    'usage': "{tr}spotdl [Spotify Link or Song Name]|[Quality (optional)]"})
 async def spotify_dl(message: Message):
     if not os.path.exists(TEMP_DIR):
         os.makedirs(TEMP_DIR)
