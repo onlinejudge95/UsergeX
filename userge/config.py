@@ -75,6 +75,8 @@ class Config:
     FINISHED_PROGRESS_STR = os.environ.get("FINISHED_PROGRESS_STR", '█')
     UNFINISHED_PROGRESS_STR = os.environ.get("UNFINISHED_PROGRESS_STR", '░')
     TMP_PATH = "userge/plugins/temp/"
+    GCS_API_KEY = os.environ.get("GCS_API_KEY", None)
+    GCS_IMAGE_E_ID = os.environ.get("GCS_IMAGE_E_ID", None)
     MAX_MESSAGE_LENGTH = 4096
     MSG_DELETE_TIMEOUT = 120
     WELCOME_DELETE_TIMEOUT = 120

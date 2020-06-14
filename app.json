@@ -110,6 +110,14 @@
         "UNFINISHED_PROGRESS_STR": {
             "description": "single character for unfinished progress",
             "required": false
+        },
+        "GCS_API_KEY": {
+            "description": "Get it from https://console.developers.google.com",
+            "required": false
+        },
+        "GCS_IMAGE_E_ID": {
+            "description": "Get it from https://cse.google.com/cse/all",
+            "required": false
         }
     },
     "addons": [
