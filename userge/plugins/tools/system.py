@@ -14,8 +14,6 @@ import speedtest
 
 from datetime import datetime
 from userge.utils import humanbytes
-from pyrogram.errors.exceptions import FileIdInvalid, FileReferenceEmpty
-from pyrogram.errors.exceptions.bad_request_400 import BadRequest
 
 from userge import userge, Message, Config, versions
 
