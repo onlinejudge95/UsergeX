@@ -54,8 +54,7 @@ async def kang_(message: Message):
         else:
             await message.edit("`Unsupported File!`")
             return
-        await message.edit(f"`{random.choice(KANGING_STR)}`",
-                                parse_mode=markdown)
+        await message.edit(f"`{random.choice(KANGING_STR)}`")
         photo = await userge.download_media(message=replied,
                                             file_name=Config.DOWN_PATH)
     else:
@@ -244,7 +243,6 @@ KANGING_STR = (
     "Underclocking..",
     "Build started under commit: **Merge branch into new pack**",
     "Build started under commit: **Rewrite to improve performance**")
-
 
 
 @userge.on_cmd("q", about={
