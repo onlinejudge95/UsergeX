@@ -18,7 +18,7 @@ async def map(message: Message) -> None:
     await message.edit("Using God Eye...")
     try:
         geolocator = Nominatim(user_agent="SkittBot")
-        location = text
+        location = " ".join(text)
         geoloc = geolocator.geocode(location)  
         lon = geoloc.longitude
         lat = geoloc.latitude
