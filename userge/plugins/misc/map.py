@@ -1,3 +1,4 @@
+""" maps, simple as that"""
 #Copyright (C) 2020 rzlamrr
 #
 #Original module from @skittles9823 < https://github.com/skittles9823/SkittBot >
@@ -8,6 +9,7 @@ from userge import userge, Message
 
 from geopy.geocoders import Nominatim
 
+LOGGER = userge.getLogger(__name__)
 
 @userge.on_cmd("map", about={
     'header': "Get map of a location",
