@@ -4,7 +4,7 @@ import shutil
 from pyrogram import InputMediaPhoto
 from google_images_search import GoogleImagesSearch as GIS
 
-from userge import userge, Message
+from userge import userge, Message, Config
 
 PATH = "temp_img_down/"
 
@@ -30,13 +30,13 @@ option and for "Sites to search" option select "Search the entire
     'usage': "{tr}gimg [Query]",
     'examples': "{tr}gimg Dogs"})
 async def google_img(message: Message):
-    if (GCS_API_KEY and GCS_IMAGE_E_ID) is None:
+    if (Config.GCS_API_KEY and Config.GCS_IMAGE_E_ID) is None:
         await message.edit(REQ_ERR, disable_web_page_preview=True)
         return
     if os.path.exists(PATH):
         shutil.rmtree(PATH, ignore_errors=True)
 
-    fetcher = GIS(GCS_API_KEY, GCS_IMAGE_E_ID)
+    fetcher = GIS(Config.GCS_API_KEY, Config.GCS_IMAGE_E_ID)
     query = message.input_str
     search = {'q': query,
               'num': 9,

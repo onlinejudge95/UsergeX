@@ -3,7 +3,7 @@ Syntax: .github USERNAME
 """
 import requests
 
-from userge import userge, Message, Config
+from userge import userge, Message
 
 
 @userge.on_cmd("git", about={

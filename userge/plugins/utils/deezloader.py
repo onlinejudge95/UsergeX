@@ -8,6 +8,7 @@ from hachoir.parser import createParser
 from userge import userge, Message
 from userge.utils.tools import humanbytes
 
+from userge import userge, Message, Config
 PATH = 'deezdown_temp/'
 ARL_HELP = """**Oops, Time to Help Yourself**
 [Here Help Yourself](https://www.google.com/search?q=how+to+get+deezer+arl+token)
@@ -38,11 +39,11 @@ async def deezload(message: Message):
             "Check your E-Mail📧 I've sent an invitation to read help for DeezLoader :)")
         return
     await message.edit("Trying to Login 🥴")
-    if ARL_TOKEN is None:
+    if Config.ARL_TOKEN is None:
         await message.edit(ARL_HELP, disable_web_page_preview=True)
         return
     try:
-        loader = deezloader.Login(ARL_TOKEN)
+        loader = deezloader.Login(Config.ARL_TOKEN)
     except Exception as er:
         await message.edit(er)
         return
